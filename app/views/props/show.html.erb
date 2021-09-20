@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @prop.url %>
+</p>
+
+<p>
+  <strong>Bedrooms:</strong>
+  <%= @prop.bedrooms %>
+</p>
+
+<p>
+  <strong>Bathrooms:</strong>
+  <%= @prop.bathrooms %>
+</p>
+
+<p>
+  <strong>Parking:</strong>
+  <%= @prop.parking %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @prop.price %>
+</p>
+
+<p>
+  <strong>Parish:</strong>
+  <%= @prop.parish %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @prop.address %>
+</p>
+
+<%= link_to 'Edit', edit_prop_path(@prop) %> |
+<%= link_to 'Back', props_path %>

@@ -1,0 +1,61 @@
+<%= form_with(model: prop) do |form| %>
+<div class="form container">
+  <% if prop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prop.errors.count, "error") %> prohibited this prop from being saved:</h2>
+
+      <ul>
+        <% prop.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :url %>
+    <%= form.text_field :url, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :bedrooms %>
+    <%= form.number_field :bedrooms, class:"form-control"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :bathrooms %>
+    <%= form.number_field :bathrooms, class:"form-control"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :parking %>
+    <%= form.number_field :parking, class:"form-control"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :price %>
+    <%= form.number_field :price, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :parish %>
+    <%= form.text_field :parish, class:"form-control"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :address %>
+    <%= form.text_field :address, class:"form-control"%>
+  </div>
+  <div class="field form-group">
+    <%= form.number_field :user_id, id: :props_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+  <div class="field form-group">
+    <%= form.label :private %>
+    <%= form.check_box :private, class:"form-check-input", id:"flexswitchcheckdefault" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-secondary" %>
+  </div>
+</div>
+<% end %>

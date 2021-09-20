@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Props</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Bedrooms</th>
+      <th>Bathrooms</th>
+      <th>Parking</th>
+      <th>Price</th>
+      <th>Parish</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @props.each do |prop| %>
+      <tr>
+        <td><%= prop.url %></td>
+        <td><%= prop.bedrooms %></td>
+        <td><%= prop.bathrooms %></td>
+        <td><%= prop.parking %></td>
+        <td><%= prop.price %></td>
+        <td><%= prop.parish %></td>
+        <td><%= prop.address %></td>
+        <td><%= link_to 'Show', prop %></td>
+        <td><%= link_to 'Edit', edit_prop_path(prop) %></td>
+        <td><%= link_to 'Destroy', prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prop', new_prop_path %>

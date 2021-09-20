@@ -1,0 +1,37 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href=/ >
+      <img src="https://st2.depositphotos.com/3867453/11100/v/950/depositphotos_111004088-stock-illustration-letter-m-logo-icon-design.jpg" alt="" width="110" height="100" class="d-inline-block align-text-top">
+      My Props
+    </a>
+  </div>
+</nav>
+
+<div class="slist">
+    <ul class="nav flex-sm-column">
+      <% if user_signed_in? == false %>
+        <%= link_to "Sign In", new_user_session_path, class:"nav-link" %>
+      <% else %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+      <% end %>
+        <li class="nav-item">
+        
+    
+        </li>
+        <li class="nav-item">
+        <%= link_to "Public List", props_path, class:"nav-link" %>
+        
+        </li>
+
+        <% if user_signed_in? == true %>
+        
+            <li class="nav-item">
+                <%= link_to "Add Property", new_prop_path, class:"nav-link" %>      
+        
+            </li>
+            <li class="nav-item">
+                <%= link_to "Your Properties", props_path, class:"nav-link" %>
+            </li>
+        <% end %>
+    </ul>
+</div>
