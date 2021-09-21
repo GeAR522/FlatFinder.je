@@ -1,8 +1,7 @@
 # README
 
 a ToDo list:
-
-no set order
+in no set order
 
 Properly format the header + title - focus on boxmodel positioning
 
@@ -17,6 +16,11 @@ make lists able to be both public and private. Option to add a uservalue to a pr
 
 learn how to allow users to upload their own images. Use as thumbnail for property lists.
 
+Use Cards + columns for the index page
+
+[done]use a method to loop the creation of a card with the details to create a 3x3 grid of cards, thumbnails + basic info + name.
+
+Learn proper filter/search system
 
 
 

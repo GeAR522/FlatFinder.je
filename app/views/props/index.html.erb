@@ -2,37 +2,37 @@
 
 <h1>Props</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Url</th>
-      <th>Bedrooms</th>
-      <th>Bathrooms</th>
-      <th>Parking</th>
-      <th>Price</th>
-      <th>Parish</th>
-      <th>Address</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @props.each do |prop| %>
-      <tr>
-        <td><%= prop.url %></td>
-        <td><%= prop.bedrooms %></td>
-        <td><%= prop.bathrooms %></td>
-        <td><%= prop.parking %></td>
-        <td><%= prop.price %></td>
-        <td><%= prop.parish %></td>
-        <td><%= prop.address %></td>
-        <td><%= link_to 'Show', prop %></td>
-        <td><%= link_to 'Edit', edit_prop_path(prop) %></td>
-        <td><%= link_to 'Destroy', prop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<br>
+
+
+<div class="row">
+  <% @props.each do |prop| %>
+
+  <div class="col-sm-4">
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> <%= prop.address%> </h5>
+        <p class="card-text">Will replace words of bed/bath with icons maybe.
+        maybe keep title for parish or even a custom name maybe</p>
+      </div>
+      <ul class="list-group list-group-flush" id="lisDets">
+        <li class="list-group-item">Bed <%= prop.bedrooms%></li>
+        <li class="list-group-item">Bath <%= prop.bathrooms%></li>
+        <li class="list-group-item">Park <%= prop.parking%></li>
+      </ul>
+      <div class="card-body" id="cardbot">
+        <%= link_to "Show", prop, class:'card-link' %>
+        <%= link_to "Edit", edit_prop_path(prop), class:"card-link" %>
+        <%= link_to "Delete", prop, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
 
 <br>
 
